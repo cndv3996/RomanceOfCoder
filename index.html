@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script type="text/javascript" src="js/CubeAnimation.js?v=2"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css?v=5">
+<title>女神王溜溜の主页</title>
+</head>
+<body>
+
+
+<div class="mainFrame">
+    <span class="lineCenter">女神王溜溜の主页</span>
+    <div class="scene">
+        <div class="cube">
+            <div id="faceFront"  class="cube_face cube_faceFront"></div>
+            <div id="faceBack"   class="cube_face cube_faceBack"></div>
+            <div id="faceRight"  class="cube_face cube_faceRight"></div>
+            <div id="faceLeft"   class="cube_face cube_faceLeft"></div>
+            <div id="faceTop"    class="cube_face cube_faceTop"></div>
+            <div id="faceBottom" class="cube_face cube_faceBottom"></div>
+        </div>
+        <div class="cubeOuter">
+            <div id="faceFrontOuter"  class="cube_faceOuter cube_faceFrontOuter"></div>
+            <div id="faceBackOuter"   class="cube_faceOuter cube_faceBackOuter"></div>
+            <div id="faceRightOuter"  class="cube_faceOuter cube_faceRightOuter"></div>
+            <div id="faceLeftOuter"   class="cube_faceOuter cube_faceLeftOuter"></div>
+            <div id="faceTopOuter"    class="cube_faceOuter cube_faceTopOuter"></div>
+            <div id="faceBottomOuter" class="cube_faceOuter cube_faceBottomOuter"></div>
+            <div id="faceFrontOuter2"  class="cube_faceOuter cube_faceFrontOuter"></div>
+            <div id="faceBackOuter2"   class="cube_faceOuter cube_faceBackOuter"></div>
+            <div id="faceRightOuter2"  class="cube_faceOuter cube_faceRightOuter"></div>
+            <div id="faceLeftOuter2"   class="cube_faceOuter cube_faceLeftOuter"></div>
+            <div id="faceTopOuter2"    class="cube_faceOuter cube_faceTopOuter"></div>
+            <div id="faceBottomOuter2" class="cube_faceOuter cube_faceBottomOuter"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+fetch('data/demofile3.json')
+  .then(response => response.json())
+  .then(data => {
+    const cubeAnimation = new CubeAnimation(data);
+    cubeAnimation.switchAllImages();
+    setInterval(cubeAnimation.loop, 33);
+  });
+//*/
+
+</script>
+
+</body>
+</html>
