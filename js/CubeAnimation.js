@@ -92,16 +92,17 @@ class CubeAnimation {
     imageSwitchTimer = 0;
     faceOuterOpcity = 0.7;
 
-    imageList = JSON.parse('{"images": ["image/rabbit1.jpg", "image/20220214/Clipboard03.jpg", "image/20220214/Clipboard04.jpg", "image/20220214/Clipboard05.jpg", "image/20220214/Clipboard06.jpg", "image/20220315/Clipboard07.jpg", "image/20220315/Clipboard08.jpg", "image/20220315/Clipboard09.jpg", "image/20220715/Clipboard10.jpg", "image/20220715/Clipboard11.jpg"]}');
+    imageList = "";
+    imageNum = 0;
+    imageIndex = 0;
 
     faceIndex = Math.floor(Math.random() * this.faceList.length);
     faceOuterIndex = Math.floor(Math.random() * this.faceOuterList.length);
 
-    imageNum = this.imageList["images"].length;
-    imageIndex = Math.floor(Math.random() * this.imageNum);
-
     constructor(imageList) {
         this.imageList = imageList;
+        this.imageNum = this.imageList["images"].length;
+        // this.imageIndex = Math.floor(Math.random() * this.imageNum);
     }
 
     
@@ -199,7 +200,7 @@ class CubeAnimation {
         if (this.imageIndex >= this.imageNum) {
             this.imageIndex = 0;
         }
-        return this.imageList["images"][this.imageIndex];
+        return this.imageList["images"][this.imageIndex]["name"];
     }
 
     loop = () => {
